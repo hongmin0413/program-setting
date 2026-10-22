@@ -1,0 +1,23 @@
+// Zed全域的任務設定，格式說明：https://zed.dev/docs/tasks
+// 快捷鍵寫在Zed全域的keymap.json，用task::Spawn指向下方的label
+// 2026.10.21 command直接寫腳本路徑，不要寫 pwsh -File：Zed本來就是用 pwsh -C 執行，再包一層pwsh會多啟動一次PowerShell，慢約0.4秒
+//   ~ 會被pwsh展開成使用者資料夾(Zed的task環境沒有APPDATA，$HOME、$env:APPDATA也會被Zed替換成空的，所以不能用)
+//   Zed的task環境裡 $env:ZED_FILE 在args裡是空的，要比較的檔案由腳本讀環境變數ZED_FILE(路徑有中文時透過args傳會變亂碼)
+[
+  {
+    //2026.10.20 開啟目前檔案的比較(左=修改前、右=修改後，開在目前視窗)【F3】
+    //有未暫存和已暫存的修改時，兩個都會開；全新、已刪除、沒變更的檔案也會處理
+    "label": "compare current file",
+    "command": "~\\AppData\\Roaming\\Zed\\taskScript\\compareCurrentFile.ps1",
+    "allow_concurrent_runs": true,
+    "reveal": "never",
+    "hide": "on_success"
+  },
+  {
+    //2026.10.21 同步遠端git分支到本地git【alt+g】
+    //原本在alms的.zed/tasks.json，其他專案也要用，移到全域
+    "label": "fetch remote git",
+    "command": "~\\AppData\\Roaming\\Zed\\taskScript\\fetchRemoteGit.ps1",
+    "hide": "on_success"
+  }
+]

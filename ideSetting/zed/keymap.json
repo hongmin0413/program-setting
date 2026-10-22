@@ -56,11 +56,18 @@
           "task_name": "test for docker"
         }
       ],
-      //同步遠端git分支到本地
+      //同步遠端git分支到本地git
       "alt-g": [
         "task::Spawn",
         {
           "task_name": "fetch remote git"
+        }
+      ],
+      //開啟設定檔與範例檔的比較
+      "alt-c": [
+        "task::Spawn",
+        {
+          "task_name": "compare config"
         }
       ]
     }
@@ -83,7 +90,14 @@
       //跳到下一個修改的地方(比較視窗用)
       "alt-f1": "editor::GoToHunk",
       //跳到上一個修改的地方(比較視窗用)
-      "alt-f2": "editor::GoToPreviousHunk"
+      "alt-f2": "editor::GoToPreviousHunk",
+      //開啟目前檔案的比較(左=修改前、右=修改後，開在目前視窗)
+      "f3": [
+        "task::Spawn",
+        {
+          "task_name": "compare current file"
+        }
+      ]
     }
   },
   {

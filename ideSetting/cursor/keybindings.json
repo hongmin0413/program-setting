@@ -114,11 +114,19 @@
         }
     },
     {
-        //同步遠端git分支到本地
+        //同步遠端git分支到本地git
         "key": "alt+g",
         "command": "workbench.action.tasks.runTask",
         "args": {
             "task": "fetch remote git"
+        }
+    },
+    {
+        //開啟設定檔與範例檔的比較
+        "key": "alt+c",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "compare config"
         }
     }
 ]

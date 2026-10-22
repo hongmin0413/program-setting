@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // 字體與主題
-  "diff_view_style": "split",
+  "cli_default_open_behavior": "new_window",
   "buffer_font_family": ".ZedMono",
   "buffer_font_size": 18.0,
   "ui_font_size": 16,
@@ -46,10 +46,30 @@
     }
   },
 
-  // 版面：左邊檔案，右邊 AI，下方終端機與 debug
+  // 版面：左邊檔案與 debug，右邊 AI，下方終端機
+  "diff_view_style": "split",
   "project_panel": {
     "dock": "left",
     "starts_open": false
+  },
+  //2026.10.21 inlay hints：在程式碼中直接顯示額外資訊(例如呼叫方法時每個參數的名稱、變數推斷出來的型別)，Zed預設是關閉的
+  "inlay_hints": {
+    //總開關：false時下面的子開關都沒作用
+    "enabled": true,
+    //顯示型別，例如 var list = new ArrayList<String>() 後面顯示變數的實際型別
+    "show_type_hints": true,
+    //顯示參數名稱，例如 getUser(1, true) 顯示成 getUser(id: 1, isActive: true)
+    "show_parameter_hints": true,
+    //顯示其他種類的提示(不是型別也不是參數的，由各語言的語言伺服器決定)
+    "show_other_hints": true,
+    //偵錯時在程式碼行尾顯示變數目前的值(只有偵錯中才有；官方預設就是true)
+    "show_value_hints": true,
+    //提示文字加上背景色，比較容易跟真正的程式碼區分
+    "show_background": false,
+    //編輯後等多少毫秒才更新提示(避免打字時一直閃)
+    "edit_debounce_ms": 700,
+    //捲動後等多少毫秒才更新提示
+    "scroll_debounce_ms": 50
   },
   "git_panel": {
     "button": false
@@ -58,6 +78,7 @@
     "dock": "right"
   },
   "agent": {
+    "show_merge_conflict_indicator": false,
     "dock": "right"
   },
   "terminal": {
@@ -66,7 +87,7 @@
     "copy_on_select": true
   },
   "debugger": {
-    "dock": "bottom"
+    "dock": "left"
   },
   "tab_bar": {
     "show": true,
@@ -101,7 +122,10 @@
     "vue": true,
     "windows-batch": true,
     "material-icon-theme": true,
-    "vscode-dark-modern": true
+    "vscode-dark-modern": true,
+    "dockerfile": true,
+    "emmet": true,
+    "powershell": true
   },
 
   // Java：autobuild、nullAnalysis、updateBuildConfiguration
@@ -116,6 +140,9 @@
   },
   "lsp": {
     "jdtls": {
+      "settings": {
+        "java_home": "D:\\java\\jdk-25.0.4.1+1"
+      },
       "initialization_options": {
         "settings": {
           "java": {
