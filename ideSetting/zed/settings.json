@@ -1,0 +1,138 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // 字體與主題
+  "diff_view_style": "split",
+  "buffer_font_family": ".ZedMono",
+  "buffer_font_size": 18.0,
+  "ui_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "VSCode Dark Modern",
+    "dark": "VSCode Dark Modern"
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+
+  // 編輯器行為
+  "autosave": "on_focus_change",
+  "linked_edits": true,
+  "tab_size": 4,
+  "hard_tabs": false,
+  "ensure_final_newline_on_save": false,
+  "remove_trailing_whitespace_on_save": false,
+  "soft_wrap": "none",
+  "scroll_beyond_last_line": "one_page",
+  "minimap": {
+    "show": "never"
+  },
+
+  // git：關閉每一行的 blame 提示
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+
+  // 版面：左邊檔案，右邊 AI，下方終端機與 debug
+  "project_panel": {
+    "dock": "left",
+    "starts_open": false
+  },
+  "git_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "agent": {
+    "dock": "right"
+  },
+  "terminal": {
+    "dock": "bottom",
+    "font_size": 18.0,
+    "copy_on_select": true
+  },
+  "debugger": {
+    "dock": "bottom"
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": true,
+    "show_pinned_tabs_in_separate_row": true
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "errors"
+  },
+  "preview_tabs": {
+    "enabled": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "title_bar": {
+    "show_branch_name": true,
+    "show_onboarding_banner": false
+  },
+
+  // 自動安裝的擴充
+  "auto_install_extensions": {
+    "java": true,
+    "html": true,
+    "xml": true,
+    "vue": true,
+    "windows-batch": true,
+    "material-icon-theme": true,
+    "vscode-dark-modern": true
+  },
+
+  // Java：autobuild、nullAnalysis、updateBuildConfiguration
+  "languages": {
+    "Java": {
+      "tab_size": 4,
+      "hard_tabs": false
+    },
+    "HTML": {
+      "format_on_save": "off"
+    }
+  },
+  "lsp": {
+    "jdtls": {
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "autobuild": {
+              "enabled": true
+            },
+            "configuration": {
+              "updateBuildConfiguration": "automatic"
+            },
+            "compile": {
+              "nullAnalysis": {
+                "mode": "automatic"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

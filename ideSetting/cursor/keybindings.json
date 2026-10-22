@@ -1,0 +1,124 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        //開啟vscode設定
+        "key": "alt+oem_comma",
+        "command": "workbench.action.openGlobalSettingsCursorAlias"
+    },
+    {
+        //開啟右側對話
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        //開啟下方面板
+        "key": "ctrl+shift+space",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        //開啟檔案(workspace)
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        //開啟檔案(jar)
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        //尋找變數或function使用的地方
+        "key": "ctrl+shift+g",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        //註解整行
+        "key": "ctrl+shift+c",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        //刪除整行
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        //跳到下一個debug
+        "key": "f8",
+        "command": "workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        //開啟此檔案的git diff視窗
+        "key": "f3",
+        "command": "git.openChange",
+        "when": "config.git.enabled && scmActiveResourceHasChanges && !git.missing && !isInDiffEditor && !isMergeEditor && resourceScheme == 'file' && gitOpenRepositoryCount != '0'"
+    },
+    {
+        //關閉此檔案的git diff視窗
+        "key": "escape",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "isInDiffEditor" 
+    },
+    {
+        //在此檔案的git diff視窗跳到下一個差別
+        "key": "f1",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible && isInDiffEditor"
+    },
+    {
+        //在此檔案的git diff視窗跳到上一個差別
+        "key": "f2",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible && isInDiffEditor"
+    },
+    {
+        //打包專案、部署程式到server、啟動debug模式的server
+        "key": "alt+p alt+d",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "debug server after package"
+        }
+    },
+    {
+        //部署程式到server、啟動debug模式的server
+        "key": "alt+d",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "debug server"
+        }
+    },
+    {
+        //重載前端程式到server
+        "key": "alt+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "reload frontend"
+        }
+    },
+    {
+        //將程式備份到雲端
+        "key": "alt+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "back up to cloud"
+        }
+    },
+    {
+        //測試docker環境
+        "key": "alt+k",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "test for docker"
+        }
+    },
+    {
+        //同步遠端git分支到本地
+        "key": "alt+g",
+        "command": "workbench.action.tasks.runTask",
+        "args": {
+            "task": "fetch remote git"
+        }
+    }
+]

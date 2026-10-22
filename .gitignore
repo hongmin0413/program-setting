@@ -1,0 +1,2 @@
+gitSetting/.ssh/*
+!gitSetting/.ssh/config

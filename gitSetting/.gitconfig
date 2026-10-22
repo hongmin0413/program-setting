@@ -1,0 +1,9 @@
+[user]
+	name = hongmin0413
+	email = s94062826@gmail.com
+[core]
+	safecrlf = false
+	ignorecase = false
+# 如果路徑在XX專案資料夾下，自動套用XX身分
+# [includeIf "gitdir:D:/workspace/XXX/"]
+    # path = C:/Users/Henry/.gitconfig-${自定義名稱}

@@ -1,0 +1,31 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 18,
+    "editor.linkedEditing": true,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#101011",
+        "statusBar.noFolderBackground": "#101011",
+        "statusBar.debuggingBackground": "#101011",
+        "statusBarItem.remoteBackground": "#246baa"
+    },
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "output.smartScroll.enabled": false,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.copyOnSelection": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.autobuild.enabled": true,
+    "java.debug.settings.hotCodeReplace": "auto",
+    "maven.pomfile.autoUpdateEffectivePOM": true,
+    "maven.terminal.useJavaHome": true,
+    "redhat.telemetry.enabled": false,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "debug.openDebug": "neverOpen",
+    "debug.console.fontSize": 18,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.openRepositoryInParentFolders": "never"
+}

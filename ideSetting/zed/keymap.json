@@ -1,0 +1,96 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace || Pane || Editor",
+    "bindings": {
+      //開啟vscode設定
+      "alt-,": "zed::OpenSettings",
+      //開啟右側對話
+      "ctrl-shift-a": "workspace::ToggleRightDock",
+      //開啟下方面板
+      "ctrl-shift-space": "workspace::ToggleBottomDock",
+      //開啟檔案(workspace)
+      "ctrl-shift-r": "file_finder::Toggle",
+      //開啟檔案(jar)
+      "ctrl-shift-t": "project_symbols::Toggle",
+      //跳到下一個debug
+      "f8": "debugger::Continue",
+      //打包專案、部署程式到server、啟動debug模式的server
+      "alt-p alt-d": [
+        "task::Spawn",
+        {
+          "task_name": "debug server after package"
+        }
+      ],
+      //部署程式到server、啟動debug模式的server
+      "alt-d": [
+        "task::Spawn",
+        {
+          "task_name": "debug server"
+        }
+      ],
+      //重載前端程式到server
+      "alt-r": [
+        "task::Spawn",
+        {
+          "task_name": "reload frontend"
+        }
+      ],
+      //將程式備份到雲端
+      "alt-b": [
+        "task::Spawn",
+        {
+          "task_name": "back up to cloud"
+        }
+      ],
+      //測試docker環境
+      "alt-k": [
+        "task::Spawn",
+        {
+          "task_name": "test for docker"
+        }
+      ],
+      //同步遠端git分支到本地
+      "alt-g": [
+        "task::Spawn",
+        {
+          "task_name": "fetch remote git"
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      //尋找變數或function使用的地方
+      "ctrl-shift-g": "editor::FindAllReferences",
+      //註解整行
+      "ctrl-shift-c": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false,
+          "comment_empty_lines": true
+        }
+      ],
+      //刪除整行
+      "ctrl-shift-d": "editor::DeleteLine",
+      //跳到下一個修改的地方(比較視窗用)
+      "alt-f1": "editor::GoToHunk",
+      //跳到上一個修改的地方(比較視窗用)
+      "alt-f2": "editor::GoToPreviousHunk"
+    }
+  },
+  {
+    "context": "Editor && extension == md",
+    "bindings": {
+      //開啟md預覽(右側)
+      "alt-m": "markdown::OpenPreviewToTheSide"
+    }
+  }
+]
