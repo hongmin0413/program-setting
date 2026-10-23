@@ -16,6 +16,16 @@ echo "同步本地已存在，且有連結到的遠端分支…"
 $currentBranch = & $git rev-parse --abbrev-ref HEAD
 # 所有本地分支
 $localBranches = & $git for-each-ref --format="%(refname:short)" refs/heads/
+# 2026.10.23 分支被其他worktree checkout時，也不能用fetch更新本地分支，記錄 分支 => worktree路徑
+$worktreeMap = @{}
+$worktreePath = ""
+foreach($line in (& $git worktree list --porcelain)) {
+	if($line -match '^worktree (.+)$') {
+		$worktreePath = $Matches[1]
+	}elseif($line -match '^branch refs/heads/(.+)$') {
+		$worktreeMap[$Matches[1]] = $worktreePath
+	}
+}
 foreach($localBranch in $localBranches) {
 	# 遠端名稱/遠端分支
 	$remoteInfoStr = & $git rev-parse --abbrev-ref --symbolic-full-name "$localBranch@{upstream}" 2>$null
@@ -27,6 +37,12 @@ foreach($localBranch in $localBranches) {
 		# 目前所在分支，不能用fetch更新本地分支，因此直接pull
 		if($localBranch -eq $currentBranch) {
 			& $git pull $remoteName $remoteBranchName
+		# 分支在其他worktree，下載後到該worktree快轉合併
+		}elseif($worktreeMap.ContainsKey($localBranch)) {
+			& $git fetch $remoteName $remoteBranchName
+			if($?) {
+				& $git -C $worktreeMap[$localBranch] merge --ff-only "$remoteName/$remoteBranchName"
+			}
 		}else {
 			& $git fetch $remoteName "${remoteBranchName}:${localBranch}"
 		}
