@@ -1,3 +1,3 @@
-gitSetting/.ssh/*
-!gitSetting/.ssh/config
 javaSetting/alms/credentials.json
+userSetting/.ssh/*
+!userSetting/.ssh/config

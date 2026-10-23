@@ -1,8 +1,5 @@
 # program-setting
 
-* gitSetting/：
-	* git相關設定
-
 * ideSetting/：
 	* ide全域設定(`cursor`、`zed`)
 
@@ -15,3 +12,6 @@
 
 * powershellSetting/：
 	* powershell相關設定
+
+* userSetting/：
+	* user相關設定(`git`、`wsl`)
